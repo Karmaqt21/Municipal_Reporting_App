@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Municipal Emergency Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="header-left">
+            <div style="font-weight: 600;">📊 Municipal EMS</div>
+            <div class="header-nav">
+                <a href="#" class="nav-link active" data-page="analytics">Analytics</a>
+                <a href="#" class="nav-link" data-page="reports">Report</a>
+                <a href="#" class="nav-link" data-page="hotlines">Hotlines</a>
+                <a href="#" class="nav-link" data-page="heatmap">Heatmap</a>
+                <a href="#" class="nav-link" data-page="announcements">Announcements</a>
+                <a href="#" class="nav-link" data-page="resources">Resources</a>
+            </div>
+        </div>
+        <div class="header-right">
+            <input type="text" class="search-box" placeholder="Search...">
+            <button class="icon-btn">👤</button>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-section">
+                <div class="sidebar-title">Official Tools</div>
+                <a href="#" class="sidebar-item active" data-page="analytics">📊 Analytics Dashboard</a>
+                <a href="#" class="sidebar-item" data-page="reports">📋 Submit Report</a>
+                <a href="#" class="sidebar-item" data-page="hotlines">📞 Hotlines</a>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-title">Explore</div>
+                <a href="#" class="sidebar-item" data-page="heatmap">🗺️ Heatmap</a>
+                <a href="#" class="sidebar-item" data-page="announcements">📢 Announcements</a>
+                <a href="#" class="sidebar-item" data-page="resources">🩹 First Aid Resources</a>
+                <a href="#" class="sidebar-item" data-page="settings">⚙️ Settings</a>
+            </div>
+            <div class="logout">👤 Logout</div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Analytics Dashboard -->
+            <div id="analytics" class="page active">
+                <div class="page-header">
+                    <h1 class="page-title">Analytics Dashboard</h1>
+                    <div class="controls">
+                        <button class="btn btn-secondary">🔽 Filter By</button>
+                        <button class="btn btn-secondary">📅 Last 30 Days</button>
+                        <button class="btn btn-primary">📊 Generate Report</button>
+                    </div>
+                </div>
+
+                <!-- Metrics Grid -->
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-label">Total Incidents Reported</div>
+                        <div class="metric-value" style="color: #2563eb;">1,247</div>
+                        <div class="metric-change">+12% compared to last month</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">Incidents Resolved</div>
+                        <div class="metric-value" style="color: #22c55e;">984</div>
+                        <div class="metric-change">+8% compared to last month</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">Average Resolution Time</div>
+                        <div class="metric-value" style="color: #ef4444;">3.2 days</div>
+                        <div class="metric-change">-2% compared to last month</div>
+                    </div>
+                </div>
+
+                <!-- Core Trends Section -->
+                <h2 class="section-title">Core Trends</h2>
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <h3>Incident Trends Over Time</h3>
+                        <div class="chart-placeholder">[Line Chart Placeholder]</div>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Incidents by Barangay</h3>
+                        <div class="chart-placeholder">[Bar Chart Placeholder]</div>
+                    </div>
+                </div>
+
+                <!-- Incident Breakdown Section -->
+                <h2 class="section-title">Incident Breakdown</h2>
+                <div class="breakdown-section">
+                    <div class="chart-card">
+                        <h3>Incidents by Type</h3>
+                        <div class="chart-small">[Donut Chart Placeholder]</div>
+                    </div>
+                    <div class="table-card">
+                        <h3>Top 5 Incident Types</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Incident Type</th>
+                                    <th>Count</th>
+                                    <th>Trend</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Road Hazard</td>
+                                    <td>342</td>
+                                    <td>↑ 12%</td>
+                                </tr>
+                                <tr>
+                                    <td>Public Nuisance</td>
+                                    <td>298</td>
+                                    <td>↓ 5%</td>
+                                </tr>
+                                <tr>
+                                    <td>Infrastructure Damage</td>
+                                    <td>215</td>
+                                    <td>↑ 8%</td>
+                                </tr>
+                                <tr>
+                                    <td>Environmental Issue</td>
+                                    <td>187</td>
+                                    <td>↑ 15%</td>
+                                </tr>
+                                <tr>
+                                    <td>Emergency</td>
+                                    <td>156</td>
+                                    <td>↓ 3%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Report Page -->
+            <div id="reports" class="page">
+                <h1 class="page-title">Submit Report</h1>
+
+                <div class="form-section">
+                    <h2 class="form-title">Submit New Incident Report</h2>
+                    <p class="form-description">Please provide details about the incident you wish to report.</p>
+
+                    <div class="form-group">
+                        <label class="form-label">Incident Type</label>
+                        <select class="form-select">
+                            <option>Select incident type</option>
+                            <option>Road Hazard</option>
+                            <option>Public Nuisance</option>
+                            <option>Infrastructure Damage</option>
+                            <option>Environmental Issue</option>
+                            <option>Emergency</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Detailed Description</label>
+                        <textarea class="form-textarea" placeholder="Describe the incident, its location, specific details, and any other relevant information."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Upload Photos/Videos (Optional)</label>
+                        <div class="file-upload">
+                            <button class="file-upload-button">📁 Select Files</button>
+                            <div class="file-upload-text">No files chosen</div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button class="btn btn-secondary">Clear Form</button>
+                        <button class="btn btn-primary">Submit Report</button>
+                    </div>
+                </div>
+
+                <div class="table-section">
+                    <h2 class="table-title">My Incident Report History</h2>
+                    <p class="table-description">View and track the status of your submitted incident reports.</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Incident ID</th>
+                                <th>Type</th>
+                                <th>Status</th>
+                                <th>Date Submitted</th>
+                                <th>Location</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>INC-00123</td>
+                                <td>Road Hazard</td>
+                                <td><span class="status-badge status-in-progress">In Progress</span></td>
+                                <td>2025-03-15</td>
+                                <td>Barangay Central</td>
+                                <td><span class="action-icon">👁️</span></td>
+                            </tr>
+                            <tr>
+                                <td>INC-00119</td>
+                                <td>Public Nuisance</td>
+                                <td><span class="status-badge status-resolved">Resolved</span></td>
+                                <td>2025-03-10</td>
+                                <td>Barangay North</td>
+                                <td><span class="action-icon">👁️</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="total-reports">Total Reports: 2</div>
+                </div>
+            </div>
+
+            <!-- Hotlines Page -->
+            <div id="hotlines" class="page">
+                <h1 class="page-title">Emergency Hotlines</h1>
+                <p class="page-description">A quick and comprehensive reference for essential emergency contact numbers. Find immediate help from various agencies.</p>
+
+                <div class="search-section">
+                    <input type="text" class="search-input" placeholder="🔍 Search agencies or numbers...">
+                </div>
+
+                <h2 class="section-title">Emergency Contact List</h2>
+                <p class="section-subtitle">Quick access to essential services</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="logo-cell">Logo</th>
+                            <th>Agency</th>
+                            <th>Description</th>
+                            <th>Phone Number</th>
+                            <th>Landline Number</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><div class="logo-img">🚑</div></td>
+                            <td>Emergency Medical Services</td>
+                            <td>Ambulance and medical emergencies</td>
+                            <td>911</td>
+                            <td>(02) 123-4567</td>
+                            <td><a class="view-details" href="#">View Details</a></td>
+                        </tr>
+                        <tr>
+                            <td><div class="logo-img">🚒</div></td>
+                            <td>Fire Department</td>
+                            <td>Fire emergencies and rescue operations</td>
+                            <td>911</td>
+                            <td>(02) 234-5678</td>
+                            <td><a class="view-details" href="#">View Details</a></td>
+                        </tr>
+                        <tr>
+                            <td><div class="logo-img">🚓</div></td>
+                            <td>Police Department</td>
+                            <td>Crime and public safety emergencies</td>
+                            <td>911</td>
+                            <td>(02) 345-6789</td>
+                            <td><a class="view-details" href="#">View Details</a></td>
+                        </tr>
+                        <tr>
+                            <td><div class="logo-img">🏥</div></td>
+                            <td>Municipal Hospital</td>
+                            <td>Medical emergencies and consultations</td>
+                            <td>911</td>
+                            <td>(02) 456-7890</td>
+                            <td><a class="view-details" href="#">View Details</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Heatmap Page -->
+            <div id="heatmap" class="page">
+                <h1 class="page-title">Heatmap Visualization</h1>
+                <p class="page-description">Analyze incident hotspots across barangays with interactive filters.</p>
+
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <div class="stat-icon">📊</div>
+                        <div class="stat-label">Total Incidents</div>
+                        <div class="stat-value">1,247</div>
+                        <div class="stat-change">+12% from last month</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">⚠️</div>
+                        <div class="stat-label">High-Risk Barangays</div>
+                        <div class="stat-value">8</div>
+                        <div class="stat-change">+2 from last month</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">✅</div>
+                        <div class="stat-label">Incidents Resolved</div>
+                        <div class="stat-value">984</div>
+                        <div class="stat-change">+8% from last month</div>
+                    </div>
+                </div>
+
+                <div class="main-container">
+                    <div class="filter-panel">
+                        <h3>Filter Options</h3>
+
+                        <div class="filter-section">
+                            <div class="filter-label">Incident Type</div>
+                            <select class="filter-input">
+                                <option>All Incidents</option>
+                                <option>Road Hazard</option>
+                                <option>Public Nuisance</option>
+                                <option>Infrastructure Damage</option>
+                                <option>Environmental Issue</option>
+                                <option>Emergency</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-section">
+                            <div class="filter-label">Date Range</div>
+                            <div style="font-size: 11px; color: #999; margin-bottom: 8px;">Date Range</div>
+                            <div class="date-range">
+                                <input type="text" class="filter-input" placeholder="Start Date">
+                                <input type="text" class="filter-input" placeholder="End Date">
+                            </div>
+                        </div>
+
+                        <div class="filter-section">
+                            <div class="filter-label">Incident Rate Legend</div>
+                            <div class="legend">
+                                <div class="legend-item">
+                                    <div class="legend-color" style="background-color: #d32f2f;"></div>
+                                    <span>High Incidence (16+)</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-color" style="background-color: #ffc107;"></div>
+                                    <span>Moderate Incidence (6-15)</span>
+                                </div>
+                                <div class="legend-item">
+                                    <div class="legend-color" style="background-color: #2196f3;"></div>
+                                    <span>Low Incidence (0-5)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <input type="text" class="search-barangay" placeholder="🔍 Search barangay...">
+
+                        <button class="clear-filters-btn" style="margin-top: 20px;">Clear Filters</button>
+                    </div>
+
+                    <div class="map-container">
+                        <h3 class="map-title">Incident Heatmap by Barangay</h3>
+                        <div class="map-placeholder">Interactive Incident Map Placeholder</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Announcements Page -->
+            <div id="announcements" class="page">
+                <h1 class="page-title">Announcements and Alerts</h1>
+
+                <div class="main-container">
+                    <div>
+                        <h2 class="section-title">Recent Municipal Announcements</h2>
+                        <div class="announcements-grid">
+                            <div class="announcement-card">
+                                <div class="card-image">
+                                    <div class="card-image-placeholder">📢</div>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-type">Community Event</div>
+                                    <div class="card-title">Community Clean-up Drive</div>
+                                    <div class="card-description">Join us for a community clean-up drive this Saturday at Barangay Central Park. All residents are welcome!</div>
+                                    <div class="card-date">Posted: March 18, 2025</div>
+                                    <a class="read-more" href="#">Read More</a>
+                                </div>
+                            </div>
+
+                            <div class="announcement-card">
+                                <div class="card-image">
+                                    <div class="card-image-placeholder">🛠️</div>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-type">Public Service</div>
+                                    <div class="card-title">Road Repair Schedule</div>
+                                    <div class="card-description">Major road repairs will be conducted on Main Street from March 20-25. Expect traffic delays.</div>
+                                    <div class="card-date">Posted: March 15, 2025</div>
+                                    <a class="read-more" href="#">Read More</a>
+                                </div>
+                            </div>
+
+                            <div class="announcement-card">
+                                <div class="card-image">
+                                    <div class="card-image-placeholder">📋</div>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-type">Policy Update</div>
+                                    <div class="card-title">New Waste Management Policy</div>
+                                    <div class="card-description">Starting April 1, new waste segregation guidelines will be implemented. Please review the updated policy.</div>
+                                    <div class="card-date">Posted: March 10, 2025</div>
+                                    <a class="read-more" href="#">Read More</a>
+                                </div>
+                            </div>
+
+                            <div class="announcement-card">
+                                <div class="card-image">
+                                    <div class="card-image-placeholder">💧</div>
+                                </div>
+                                <div class="card-content">
+                                    <div class="card-type">Maintenance</div>
+                                    <div class="card-title">Water Interruption Notice</div>
+                                    <div class="card-description">Water supply will be temporarily interrupted in District 3 for maintenance work on March 22, 8 AM - 4 PM.</div>
+                                    <div class="card-date">Posted: March 12, 2025</div>
+                                    <a class="read-more" href="#">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 class="section-title">Browse Alert Categories</h2>
+                        
+                        <div class="alert-category">Disaster Warnings</div>
+                        
+                        <div class="category-tags">
+                            <div class="category-tag">Public Works</div>
+                            <div class="category-tag">Road Closures</div>
+                        </div>
+
+                        <div class="category-tags">
+                            <div class="category-tag">Health Advisories</div>
+                        </div>
+
+                        <div class="alert-category" style="background-color: #c41e3a;">Emergency Evacuation</div>
+                        
+                        <div class="category-tags">
+                            <div class="category-tag">Water Interruption</div>
+                        </div>
+
+                        <h3 style="font-size: 13px; font-weight: 600; margin: 25px 0 15px 0; color: #333;">Active Safety Alerts</h3>
+
+                        <div class="alert-item">
+                            <div class="alert-title">
+                                <span>Typhoon Warning - Signal #2</span>
+                                <div class="alert-badge">Urgent</div>
+                            </div>
+                            <div class="alert-description">Typhoon Maria is expected to make landfall within 24 hours. Prepare emergency kits and follow evacuation protocols.</div>
+                            <div class="alert-meta">
+                                <span class="alert-meta-label">Issued:</span> <span>March 20, 2025, 10:30 AM</span>
+                            </div>
+                            <div class="alert-meta">
+                                <span class="alert-meta-label">Source:</span> <span>PAGASA</span>
+                            </div>
+                        </div>
+
+                        <h3 style="font-size: 13px; font-weight: 600; margin: 25px 0 15px 0; color: #333;">Scheduled Alerts</h3>
+
+                        <div class="alert-item">
+                            <div class="alert-title">
+                                <span>Water Interruption - District 3</span>
+                                <select class="dropdown-select">
+                                    <option>Issued</option>
+                                </select>
+                            </div>
+                            <div style="font-size: 12px; color: #666;">March 22, 8 AM - 4 PM</div>
+                        </div>
+
+                        <div class="alert-item">
+                            <div class="alert-title">
+                                <span>Wind Signal #1</span>
+                                <select class="dropdown-select">
+                                    <option>Issued</option>
+                                </select>
+                            </div>
+                            <div style="font-size: 12px; color: #666;">Advisory - Moderate Levels</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resources Page -->
+            <div id="resources" class="page">
+                <h1 class="page-title">First Aid & Disaster Preparedness</h1>
+
+                <div class="info-banner">
+                    <div class="info-icon">ℹ️</div>
+                    <div>All information on this page is carefully curated and verified by municipal health and disaster preparedness officials to ensure accuracy and reliability.</div>
+                </div>
+
+                <h2 class="section-title">Offline-Ready Guides</h2>
+                <p class="section-description">Access essential first aid guides, even without an internet connection, to be prepared for any situation.</p>
+
+                <div class="guides-grid">
+                    <div class="guide-card">
+                        <div class="card-image">
+                            <div class="card-image-placeholder">🫀</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-badge">CPR</div>
+                            <div class="card-title">Cardiopulmonary Resuscitation</div>
+                            <div class="card-description">Step-by-step guide to performing CPR on adults, children, and infants in emergency situations.</div>
+                            <button class="read-guide-btn">Read Guide</button>
+                        </div>
+                    </div>
+
+                    <div class="guide-card">
+                        <div class="card-image">
+                            <div class="card-image-placeholder">🩹</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-badge">Injuries</div>
+                            <div class="card-title">Wound Care & Bleeding Control</div>
+                            <div class="card-description">How to properly clean and dress wounds, control bleeding, and recognize signs of infection.</div>
+                            <button class="read-guide-btn">Read Guide</button>
+                        </div>
+                    </div>
+
+                    <div class="guide-card">
+                        <div class="card-image">
+                            <div class="card-image-placeholder">🚨</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-badge">Emergencies</div>
+                            <div class="card-title">Emergency Response Protocols</div>
+                            <div class="card-description">Essential steps to take during various emergencies including earthquakes, floods, and fires.</div>
+                            <button class="read-guide-btn">Read Guide</button>
+                        </div>
+                    </div>
+
+                    <div class="guide-card">
+                        <div class="card-image">
+                            <div class="card-image-placeholder">💊</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-badge">Medical</div>
+                            <div class="card-title">Common Medical Conditions</div>
+                            <div class="card-description">How to recognize and provide initial care for common medical emergencies like heart attacks and strokes.</div>
+                            <button class="read-guide-btn">Read Guide</button>
+                        </div>
+                    </div>
+
+                    <div class="guide-card">
+                        <div class="card-image">
+                            <div class="card-image-placeholder">🦴</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-badge">Fractures</div>
+                            <div class="card-title">Fracture & Sprain Management</div>
+                            <div class="card-description">How to immobilize fractures, recognize sprains, and provide initial care before medical help arrives.</div>
+                            <button class="read-guide-btn">Read Guide</button>
+                        </div>
+                    </div>
+
+                    <div class="guide-card">
+                        <div class="card-image">
+                            <div class="card-image-placeholder">🌪️</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-badge">Disasters</div>
+                            <div class="card-title">Natural Disaster Preparedness</div>
+                            <div class="card-description">Comprehensive guide to preparing for and responding to various natural disasters common in our region.</div>
+                            <button class="read-guide-btn">Read Guide</button>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="section-title">Emergency Kit Checklist</h2>
+                <p class="section-description">Ensure your emergency kit is fully stocked and ready. Mark items as you acquire them.</p>
+
+                <div class="checklist-section">
+                    <div class="checklist-item">
+                        <div class="checklist-title">
+                            <div class="checkbox">✓</div>
+                            <div class="checklist-text">Basic First Aid Kit</div>
+                        </div>
+                        <div class="expand-icon">▼</div>
+                    </div>
+                    <div class="checklist-description" style="margin-left: 30px; margin-bottom: 15px;">Includes bandages, antiseptic wipes, gauze, medical tape, pain relievers, and scissors. Essential for minor injuries.</div>
+
+                    <div class="checklist-item">
+                        <div class="checklist-title">
+                            <div class="checkbox">✓</div>
+                            <div class="checklist-text">Water (1 gallon per person per day for 3 days)</div>
+                        </div>
+                        <div class="expand-icon">▼</div>
+                    </div>
+                    <div class="checklist-description" style="margin-left: 30px; margin-bottom: 15px;">Crucial for drinking and sanitation. Store in a cool, dark place.</div>
+
+                    <div class="checklist-item">
+                        <div class="checklist-title">
+                            <div class="checkbox"></div>
+                            <div class="checklist-text">Non-perishable Food (3-day supply)</div>
+                        </div>
+                        <div class="expand-icon">▼</div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <div class="checklist-title">
+                            <div class="checkbox">✓</div>
+                            <div class="checklist-text">Battery-powered or Hand Crank Radio</div>
+                        </div>
+                        <div class="expand-icon">▼</div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <div class="checklist-title">
+                            <div class="checkbox"></div>
+                            <div class="checklist-text">Flashlight and Extra Batteries</div>
+                        </div>
+                        <div class="expand-icon">▼</div>
+                    </div>
+                </div>
+
+                <h2 class="section-title">Video Tutorials</h2>
+                <p class="section-description">Watch these informative videos for practical demonstrations on disaster preparedness and first aid techniques.</p>
+
+                <div class="videos-grid">
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            <div class="play-button">▶</div>
+                        </div>
+                        <div class="video-content">
+                            <div class="video-title">Basic First Aid Techniques</div>
+                            <div class="video-description">Learn essential first aid skills including wound care, bandaging, and emergency response.</div>
+                            <button class="watch-now-btn">Watch Now</button>
+                        </div>
+                    </div>
+
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            <div class="play-button">▶</div>
+                        </div>
+                        <div class="video-content">
+                            <div class="video-title">CPR Demonstration</div>
+                            <div class="video-description">Step-by-step CPR instruction for adults, children, and infants with proper technique.</div>
+                            <button class="watch-now-btn">Watch Now</button>
+                        </div>
+                    </div>
+
+                    <div class="video-card">
+                        <div class="video-thumbnail">
+                            <div class="play-button">▶</div>
+                        </div>
+                        <div class="video-content">
+                            <div class="video-title">Emergency Evacuation Procedures</div>
+                            <div class="video-description">How to safely evacuate during various emergency situations and create a family emergency plan.</div>
+                            <button class="watch-now-btn">Watch Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Page -->
+            <div id="settings" class="page">
+                <h1 class="page-title">Settings</h1>
+                <div class="form-section">
+                    <h2 class="form-title">Account Settings</h2>
+                    <p class="form-description">Manage your account preferences and notification settings.</p>
+
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-input" placeholder="your.email@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Notification Preferences</label>
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                            <label style="display: flex; align-items: center; gap: 8px;">
+                                <input type="checkbox" checked> Emergency Alerts
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px;">
+                                <input type="checkbox" checked> Incident Updates
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 8px;">
+                                <input type="checkbox"> Community Announcements
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button class="btn btn-secondary">Cancel</button>
+                        <button class="btn btn-primary">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-links">
+            <a href="#">Logout</a>
+            <a href="#">Quick Links</a>
+            <a href="#">About</a>
+            <a href="#">Help</a>
+        </div>
+        <div>© 2025 Municipal Emergency Management System. All Rights Reserved.</div>
+        <div style="display: flex; gap: 16px;">
+            <span>📞</span>
+            <span>🔒</span>
+            <span>📊</span>
+            <span>📱</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
